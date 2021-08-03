@@ -10,6 +10,13 @@ class History extends Component
 {
     public $orders;
 
+    public function mount()
+    {
+        if (!Auth::user()) {
+            return redirect()->route('login');
+        }
+    }
+
     public function render()
     {   
         if (Auth::user()) {

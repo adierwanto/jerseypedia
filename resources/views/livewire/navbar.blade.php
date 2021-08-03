@@ -26,9 +26,11 @@
                             <a class="dropdown-item" href="{{route('products')}}">All Leagues</a>
                         </div>
                       </li>
+                      @if (Auth::user())
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ route('history') }}">History</a>
-                    </li>
+                          <a class="nav-link" href="{{ route('history') }}">History</a>
+                        </li>
+                        @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->

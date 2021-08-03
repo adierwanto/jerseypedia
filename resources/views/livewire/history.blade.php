@@ -44,7 +44,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($orders as $key => $order)
+                            @forelse ($orders as $key => $order)
                             <tr>
                                 <td>{{$key + 1}}</td>
                                 <td>{{$order->created_at}}</td>
@@ -65,7 +65,11 @@
                                 </td>
                                 <td>Rp. {{number_format($order->total_price)}}</td>
                             </tr>
-                            @endforeach
+                            @empty
+                            <tr>
+                                <td colspan="6"><h3><b>EMPTY</b></h3></td>
+                            </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
